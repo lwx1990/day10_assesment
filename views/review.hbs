@@ -1,0 +1,27 @@
+{{#if hasResult}}
+    <div class="row">
+        <div class="col">
+            <h2>{{book_review.book_title}}</h2>
+            <h4>By: {{book_review.book_author}}</h4>
+            <h4>Reviewer: {{book_review.byline}}</h4>
+            <h4>Date: {{book_review.publication_dt}}</h4>
+            <h5>{{book_review.summary}}</h5></p> 
+        </div>
+
+    </div>
+
+    <div>
+        <a href="{{book_review.url}}">Full reivew</a>
+
+        <h6>{{book_review.copyright}}</h6>
+
+    </div>
+{{else}}
+    <h2>No reviews are found</h2>
+{{/if}}
+
+
+
+
+
+
