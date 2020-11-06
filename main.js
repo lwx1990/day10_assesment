@@ -24,7 +24,7 @@ app.set('view engine', 'hbs')
 //create SQL
 const SQL_GET_TITLE= 'select book_id, title from book2018 where title like ? limit ? offset ?'
 const SQL_GET_BOOK_ID = 'select * from book2018 where book_id = ?'
-const SQL_COUNT = 'select count(*)from book2018 where title like ?'
+// const SQL_COUNT = 'select count(*)from book2018 where title like ?'
 
 //create the database connection pool
 const pool = mysql.createPool({
@@ -126,9 +126,7 @@ app.get('/display/:book_id', async (req, res) => {
         res.format({
             'text/html': () => {
                 res.type('text/html')
-                res.render('display', { display: recs[0] 
-                    
-                
+                res.render('display', { display: recs[0]  
                 })
             },
             'application/json': () => {
