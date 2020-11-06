@@ -1,0 +1,30 @@
+<h2>Letter of</h2>
+
+<ul>
+    {{#each app}}
+        <li>
+            <a href="{{this.book_id}}">{{ this.title }}</a> 
+        </li>
+    {{/each}}
+
+</ul>
+
+<table>
+    <tr>
+        <td>
+            <form method="GET" action="/title">
+                <input type="hidden" name="letter" value="{{ letter }}">
+                <input type="hidden" name="offset" value="{{ prevOffset}}">
+                <button type="submit">Previous</button>
+            </form>
+        </td>
+        <td>
+            <form method="GET" action="/title">
+                <input type="hidden" name="letter" value="{{ letter }}">
+                <input type="hidden" name="offset" value="{{nextOffset}}">  
+                <button type="submit">Next</button>
+            </form>
+        </td>
+
+    </tr>
+</table>
